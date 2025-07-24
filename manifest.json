@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Quick Bookmark",
+  "version": "1.0",
+  "description": "빠른 북마크 관리 확장 프로그램",
+  "permissions": ["storage", "tabs", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"],
+      "js": ["content.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "commands": {
+    "save-bookmark": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S"
+      },
+      "description": "현재 페이지를 북마크에 저장"
+    },
+    "toggle-container": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Q"
+      },
+      "description": "북마크 컨테이너 토글"
+    }
+  }
+}

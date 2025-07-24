@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quick Bookmark 설정</title>
+    <style>
+      body {
+        width: 800px;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+      }
+      .bookmark-list {
+        margin-top: 20px;
+      }
+      .bookmark-item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+      .bookmark-item img {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+      }
+      .bookmark-info {
+        flex-grow: 1;
+      }
+      .bookmark-title {
+        font-weight: bold;
+      }
+      .bookmark-url {
+        color: #666;
+        font-size: 0.9em;
+      }
+      .bookmark-time {
+        color: #999;
+        font-size: 0.8em;
+      }
+      .delete-btn {
+        background: #f44336;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .delete-btn:hover {
+        background: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quick Bookmark 설정</h1>
+    <div class="bookmark-list" id="bookmarkList"></div>
+    <script src="options.js"></script>
+  </body>
+</html>
