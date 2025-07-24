@@ -67,6 +67,9 @@ document.addEventListener('keydown', (e) => {
   const bookmarks = container.querySelectorAll('.qb-bookmark')
 
   switch (e.key) {
+    case 'Escape':
+      toggleContainer()
+      break
     case 'ArrowUp':
       e.preventDefault()
       if (selectedBookmarkIndex > 0) {
@@ -85,6 +88,17 @@ document.addEventListener('keydown', (e) => {
         openBookmark(selectedBookmarkIndex)
       }
       break
+  }
+})
+
+// 컨테이너 외부 클릭 처리
+document.addEventListener('click', (e) => {
+  if (
+    !container.classList.contains('hidden') &&
+    !container.contains(e.target) &&
+    !handle.contains(e.target)
+  ) {
+    toggleContainer()
   }
 })
 
